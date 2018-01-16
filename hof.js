@@ -4,7 +4,7 @@ function fun(){
   glb_counter++;
 }
 function hof(fun, num){
-  glb_counter = 0;
+
   for(let i= 0; i < num; i++){
     fun();
   }
@@ -16,5 +16,9 @@ function hof(fun, num){
 module.exports = hof;
 
 
-console.log(hof(fun,3) != 2);
-console.log(hof(fun,4) == 4);
+hof(fun,3);
+console.log(glb_counter === 3);
+glb_counter = 0;
+hof(fun,4);
+console.log(glb_counter != 3);
+glb_counter = 0;
