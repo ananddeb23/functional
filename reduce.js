@@ -1,8 +1,9 @@
 
 function countWords(inpWords){
 	let resultObject = inpWords.reduce(function (result, word) {
-		if (word in result) {
-			result[word]++;
+		console.log(result,word);
+		if (result[word]) {
+			result[word] += 1;
 		}
 		else {
 			result[word] = 1;
@@ -31,6 +32,11 @@ function checkObjectEqual(obj1, obj2){
 
 //console.log(countWords(['Apple', 'Banana', 'Apple', 'Durian', 'Durian', 'Durian']));
 console.log(checkObjectEqual(countWords(['Apple', 'Banana', 'Apple', 'Durian', 'Durian', 'Durian']), {Apple :2, Banana: 1, Durian: 3}) === true);
+console.log(checkObjectEqual(countWords(['Apple', 'Banana', 'Durian']), {Apple :1, Banana: 1, Durian: 1}) === true);
+console.log(checkObjectEqual(countWords([]), {}) === true);
+console.log(checkObjectEqual(countWords(['Apple', 'Banana', 'Apple', 'Durian', 'Durian', 'Durian']), {Apple :2, Banana: 1, Durian: 3}) === true);
+console.log(checkObjectEqual(countWords(['Apple']), {Apple :1}) === true);
+
 console.log(checkObjectEqual({Apple :2, Banana: 1, Durian: 3}, { Banana: 1, Durian: 3}) === false);
 console.log(checkObjectEqual({Apple :2, Banana: 1, Durian: 3}, {Apple2 :2, Banana: 1, Durian: 3}) === true);
 console.log(checkObjectEqual({Apple :2, Banana: 1, Durian: 3}, {Apple2 :2, Banana: 1, Durian: 3}) === true);

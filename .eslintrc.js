@@ -10,12 +10,15 @@ module.exports = {
             "jsx": true
         },
         "sourceType": "module"
+
     },
     "rules": {
         "indent": [
             "error",
             "tab"
         ],
+        "no-console": 0,
+        "no-var": "error",
         "linebreak-style": [
             "error",
             "unix"

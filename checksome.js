@@ -19,19 +19,19 @@ function checkUsersValid(goodUsers) {
 }
 
 module.exports = checkUsersValid;
-var goodUsers = [
+let goodUsers = [
 	{ id: 1 },
 	{ id: 2 },
 	{ id: 3 }
 ];
 
-var submittedUsers = [
+let submittedUsers = [
 	{ id: 1 },
 	{ id: 2 },
 	{ id: 3 }
 ];
 //write test case for empty goodUSer and EmptyUSer
-var testAllValid = checkUsersValid(goodUsers)(submittedUsers);
+let testAllValid = checkUsersValid(goodUsers)(submittedUsers);
 console.log(testAllValid === true);
 testAllValid = checkUsersValid([])(submittedUsers);
 console.log(testAllValid === false);
